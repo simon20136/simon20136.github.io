@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JavaScript Practice</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <script>
+            'use script';
+
+            for (let i=0; i<15; i++) {
+                const div = document.createElement('div');
+                div.classList.add('box');
+                div.textContent = i;
+                div.addEventListener('click', () => {
+                    div.classList.toggle('circle');
+                });
+                document.body.appendChild(div);
+            }
+        </script>
+    </body>
+</html>
