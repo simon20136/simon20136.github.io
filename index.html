@@ -2,31 +2,13 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width initial-scale=1">
         <title>JavaScript Practice</title>
+        <link rel="icon" href="neko.ico">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
 
-        <script>
-            'use script';
-            const num = 9;
-            const winner = Math.floor(Math.random() * num);     // 小数点以下切り捨て０～９生成
-
-            for (let i=0; i<num; i++) {
-                const div = document.createElement('div');
-                div.classList.add('box');
-                div.addEventListener('click', () => {
-                    if (i == winner) {
-                        div.textContent = "あたり～";
-                        div.classList.add('win');
-                    } else {
-                        div.textContent = "はずれ";
-                        div.classList.add('lose');
-                    }
-                });
-                document.body.appendChild(div);
-            }
-        </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
