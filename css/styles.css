@@ -6,17 +6,17 @@ body {
 .box {
     width: 100px;
     height: 100px;
-    background-color: skyblue;
+    background-color:aquamarine;
     transition: 1s;
-    margin: 0px 10px 10px 0px;
     text-align: center;
     line-height: 100px;
+    margin: 0px 10px 10px 0px;
 }
 
 .win {
-    background-color: pink;
+    background-color: orange;
     border-radius: 50%;
-    transform: rotate(360deg);
+    transform: rotate(720deg);
 }
 
 .lose {
