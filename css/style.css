@@ -1,0 +1,73 @@
+/* common */
+body, h1, h2, p {
+    padding: 0;
+    margin: 0;
+}
+
+/* header */
+/* h1 {
+    font-weight: normal;
+    font-size: 20px;
+    text-align: center;
+    line-height: 3em;
+} */
+
+.h_box {
+    width: 300px;
+    height: 60px;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+    line-height: 3em;
+}
+
+.p_box {
+    width: 356px;
+    border: 2px solid deepskyblue;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.c_box {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: 1s;
+    font-size: 14px;
+    text-align: center;
+    line-height: 100px;
+}
+
+/* .c_box:hover {
+    opacity: 0.7;
+} */
+
+.win {
+    background-color: orange;
+    transform: rotate(720deg);
+    border-radius: 50%;
+}
+
+.lose {
+    background-color: steelblue;
+    transform: scale(0.8);
+}
+
+.btn {
+    width: 80px;
+    height: 40px;
+    background-color: deepskyblue;
+    border-radius: 4px;
+    margin: 30px auto;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
