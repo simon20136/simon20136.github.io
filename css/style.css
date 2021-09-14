@@ -5,12 +5,12 @@ body, h1, h2, p {
 }
 
 /* header */
-/* h1 {
+#title {
     font-weight: normal;
     font-size: 20px;
     text-align: center;
     line-height: 3em;
-} */
+}
 
 .h_box {
     width: 300px;

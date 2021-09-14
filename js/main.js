@@ -1,18 +1,16 @@
 "use strict"
 
 {
+    const parentDiv = document.createElement('div');
+    parentDiv.classList.add('p_box');
+    document.body.appendChild(parentDiv);
+    
     game9boxProc();
     btnClickProc();
-
+    
     function game9boxProc() {
-        const hDiv = document.createElement('div');
-        hDiv.classList.add('h_box');
-        document.body.appendChild(hDiv);
-        hDiv.textContent = 'Check 9 box';
-
-        const parentDiv = document.createElement('div');
-        parentDiv.classList.add('p_box');
-        document.body.appendChild(parentDiv);
+        const title = document.getElementById('title');
+        title.textContent = 'Check 9box';
         
         const num = 9;
         const winner = Math.floor(Math.random() * num);
@@ -29,7 +27,7 @@
                     childDiv.classList.add('win');
                     childDiv.textContent = 'あたり (^^)/';
                     flag = false;
-                    hDiv.textContent = '得点は' + String(score) + '点です';
+                    title.textContent = '得点は' + String(score) + '点です';
                 } else {
                     childDiv.classList.add('lose');
                     childDiv.textContent = 'はずれ (T_T)';
@@ -48,11 +46,9 @@
         btnDiv.textContent = 'もう一回';
         document.body.appendChild(btnDiv);
         btnDiv.addEventListener('click', () => {
-            document.location.reload();
+            // document.location.reload();
+            parentDiv.innerHTML = '';
+            game9boxProc();
         });
     }
-
-    // C言語のように関数を定義したあとに置かなくてもよい
-    // game9boxProc();
-    // btnClickProc();
 }
