@@ -1,54 +1,40 @@
-"use strict"
-
+"use strict";
 {
-    const parentDiv = document.createElement('div');
-    parentDiv.classList.add('p_box');
-    document.body.appendChild(parentDiv);
+    const divContainer = document.getElementById('container');
+    const divBtn = document.getElementById('btn');
     
-    game9boxProc();
-    btnClickProc();
+    checkBoxProc();
     
-    function game9boxProc() {
-        const title = document.getElementById('title');
-        title.textContent = 'Check 9box';
-        
+    function checkBoxProc() {
+        let score = 100;
         const num = 9;
+        const h1Title = document.getElementById('title');
+        h1Title.textContent = '９つの箱をクリックして当たりを探そう';
+    
         const winner = Math.floor(Math.random() * num);
     
-        let score = 100;
-        let flag = true;
-
-        for (let i=0; i<num; i++) {
-            const childDiv = document.createElement('div');
-            childDiv.classList.add('c_box');
+        for(let i=0; i<num; i++) {
+            const divBox = document.createElement('div');
+            divBox.classList.add('box');
+            divContainer.appendChild(divBox);
     
-            childDiv.addEventListener('click', () => {
-                if(i === winner) {
-                    childDiv.classList.add('win');
-                    childDiv.textContent = 'あたり (^^)/';
-                    flag = false;
-                    title.textContent = '得点は' + String(score) + '点です';
+            divBox.addEventListener('click', () => {
+                if (i === winner) {
+                    divBox.classList.add('win');
+                    divBox.textContent = '当たり(^^)/';
+                    h1Title.textContent = 'おめでとう！ 得点は' + score.toString(10) + '点です';
                 } else {
-                    childDiv.classList.add('lose');
-                    childDiv.textContent = 'はずれ (T_T)';
-                    if(flag === true) {
-                        score -= 10;
-                    }
+                    divBox.classList.add('lose');
+                    divBox.textContent = 'はずれ(T_T)';
+                    score -= 10;
                 }
             });
-            parentDiv.appendChild(childDiv);
         }
     }
-    
-    function btnClickProc() {
-        const btnDiv = document.createElement('div');
-        btnDiv.classList.add('btn');
-        btnDiv.textContent = 'もう一回';
-        document.body.appendChild(btnDiv);
-        btnDiv.addEventListener('click', () => {
-            // document.location.reload();
-            parentDiv.innerHTML = '';
-            game9boxProc();
-        });
-    }
+
+    divBtn.addEventListener('click', () => {
+        divContainer.innerHTML = '';
+        checkBoxProc();
+    });
+
 }
